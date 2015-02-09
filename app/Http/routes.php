@@ -39,8 +39,8 @@ Route::get('articles', 'BlogController@indexFront');
 Route::get('blog/tag', 'BlogController@tag');
 Route::get('blog/search', 'BlogController@search');
 
-Route::put('postvu/{id}', 'BlogController@updateVu');
-Route::put('postactif/{id}', 'BlogController@updateActif');
+Route::put('postseen/{id}', 'BlogController@updateSeen');
+Route::put('postactive/{id}', 'BlogController@updateActive');
 
 Route::resource('blog', 'BlogController');
 
@@ -49,8 +49,8 @@ Route::resource('comment', 'CommentController', [
 	'except' => ['create', 'show']
 ]);
 
-Route::put('commentvu/{id}', 'CommentController@updateVu');
-Route::put('uservalid/{id}', 'CommentController@valide');
+Route::put('commentseen/{id}', 'CommentController@updateSeen');
+Route::put('uservalid/{id}', 'CommentController@valid');
 
 
 // Contact
@@ -65,7 +65,7 @@ Route::get('user/sort/{role}', 'UserController@indexSort');
 Route::get('user/roles', 'UserController@getRoles');
 Route::post('user/roles', 'UserController@postRoles');
 
-Route::put('uservu/{id}', 'UserController@updateVu');
+Route::put('userseen/{id}', 'UserController@updateSeen');
 
 Route::resource('user', 'UserController');
 
